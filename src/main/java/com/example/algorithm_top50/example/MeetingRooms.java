@@ -17,7 +17,7 @@ class Interval{
 		this.end = e;
 	}
 }
-public class MeetingRooms {
+public class T04_MeetingRooms {
 	public static void main(String[] args) {
 		MeetingRooms a = new MeetingRooms();
 		
