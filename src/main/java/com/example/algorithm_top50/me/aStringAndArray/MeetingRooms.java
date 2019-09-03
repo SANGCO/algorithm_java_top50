@@ -1,6 +1,5 @@
 package com.example.algorithm_top50.me.aStringAndArray;
 
-import java.util.Arrays;
 import java.util.Comparator;
 
 
@@ -46,9 +45,10 @@ public class MeetingRooms {
 
     Comparator<Interval> Comp = new Comparator<Interval>() {
 
+        // TODO compare 부분 정리
+
         @Override
         public int compare(Interval a, Interval b) {
-            // TODO Auto-generated method stub
             return a.start - b.start;
         }
 
