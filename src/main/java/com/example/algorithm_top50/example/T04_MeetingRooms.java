@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 
 
-class Interval{
+T04_MeetingRooms.javaclass Interval{
 	int start;
 	int end;
 	Interval(){
