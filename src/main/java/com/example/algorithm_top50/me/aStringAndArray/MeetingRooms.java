@@ -3,66 +3,80 @@ package com.example.algorithm_top50.me.aStringAndArray;
 import java.util.Arrays;
 import java.util.Comparator;
 
-
-
-class Interval{
-	int start;
-	int end;
-
-	Interval(){
-		this.start = 0;
-		this.end =0;
-	}
-
-	Interval(int s, int e){
-		this.start = s;
-		this.end = e;
-	}
-}
 public class MeetingRooms {
-	public static void main(String[] args) {
-		MeetingRooms a = new MeetingRooms();
-		
-	
-		Interval in1 = new Interval(15,20);
-		Interval in2 = new Interval(5,10);
-		Interval in3 = new Interval(0,30);
-		
-		Interval[] intervals = {in1, in2,in3};
-		System.out.println(a.solve(intervals));
-	}
-	
-	public boolean solve(Interval[] intervals) {
-		if(intervals == null) return false;
-		//1 sorting
-		print(intervals);
-		Arrays.sort(intervals, Comp);
-		System.out.println("===after sort====");
-		print(intervals);
-		
-		for(int i=1; i<intervals.length; i++) {
-			if(intervals[i-1].end >intervals[i].start)
-				return false;
-		}
-			
-		return true;
-		
-		
-	}
-	public void print(Interval[] intervals) {
-		for(int i=0; i<intervals.length; i++) {
-			Interval in = intervals[i];
-			System.out.println(in.start+" "+in.end);
-			
-		}
-	}
-	Comparator<Interval> Comp = new Comparator<Interval>() {
 
-		@Override
-		public int compare(Interval a, Interval b) {
-			// TODO Auto-generated method stub
-			return a.start - b.start;
-		}
-		
-	};
+    public static void main(String[] args) {
+        MeetingRooms meetingRooms = new MeetingRooms();
+
+
+        Interval interval1 = new Interval(15,20);
+        Interval interval2 = new Interval(5,10);
+        Interval interval3 = new Interval(0,30);
+
+        Interval[] intervals1 = {interval1, interval2, interval3};
+        System.out.println(meetingRooms.solve(intervals1));
+
+        Interval interval4 = new Interval(7,10);
+        Interval interval5 = new Interval(2,4);
+
+        Interval[] intervals2 = {interval4, interval5};
+        System.out.println(meetingRooms.solve(intervals2));
+
+        Interval interval6 = new Interval(2,4);
+
+        Interval[] intervals3 = {interval6};
+        System.out.println(meetingRooms.solve(intervals3));
+    }
+
+    public boolean solve(Interval[] intervals) {
+
+        System.out.println("Before : " + Arrays.toString(intervals));
+
+        Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
+
+        System.out.println("After : " + Arrays.toString(intervals));
+
+        if (intervals.length == 1) return true;
+
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
+        }
+
+        return true;
+    }
+
+}
+
+// TODO 적절한 접근제어자는 뭘까? 이펙티브 자바 복습 삼아 생각해 보자.
+class Interval {
+
+    private int start;
+
+    private int end;
+
+    Interval(){
+        this.start = 0;
+        this.end =0;
+    }
+
+    Interval(int s, int e){
+        this.start = s;
+        this.end = e;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getEnd() {
+        return end;
+    }
+
+    @Override
+    public String toString() {
+        return "Interval{" +
+                "start=" + start +
+                ", end=" + end +
+                '}';
+    }
 }
