@@ -1,4 +1,4 @@
-package com.example.algorithm_top50.me.aStringAndArray;
+package com.example.algorithm_top50.me;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -45,38 +45,37 @@ public class MeetingRooms {
         return true;
     }
 
-}
+    // TODO 적절한 접근제어자는 뭘까? 이펙티브 자바 복습 삼아 생각해 보자.
+    private static class Interval {
 
-// TODO 적절한 접근제어자는 뭘까? 이펙티브 자바 복습 삼아 생각해 보자.
-class Interval {
+        private int start;
 
-    private int start;
+        private int end;
 
-    private int end;
+        Interval(){
+            this.start = 0;
+            this.end =0;
+        }
 
-    Interval(){
-        this.start = 0;
-        this.end =0;
-    }
+        Interval(int s, int e){
+            this.start = s;
+            this.end = e;
+        }
 
-    Interval(int s, int e){
-        this.start = s;
-        this.end = e;
-    }
+        public int getStart() {
+            return start;
+        }
 
-    public int getStart() {
-        return start;
-    }
+        public int getEnd() {
+            return end;
+        }
 
-    public int getEnd() {
-        return end;
-    }
-
-    @Override
-    public String toString() {
-        return "Interval{" +
-                "start=" + start +
-                ", end=" + end +
-                '}';
+        @Override
+        public String toString() {
+            return "Interval{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    '}';
+        }
     }
 }
