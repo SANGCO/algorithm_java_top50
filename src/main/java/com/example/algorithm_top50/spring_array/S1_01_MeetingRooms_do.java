@@ -15,13 +15,13 @@ public class S1_01_MeetingRooms_do {
         System.out.println("intervals3 : " + meetingRooms.solve(intervals3));
     }
 
-    private static Interval getInterval(int s, int e) {
-        return new Interval(s, e);
-    }
-
     private boolean solve(Interval[] intervals) {
 
         return true;
+    }
+
+    private static Interval getInterval(int s, int e) {
+        return new Interval(s, e);
     }
 
     private static class Interval {
