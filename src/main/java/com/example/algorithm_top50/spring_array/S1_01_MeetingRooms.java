@@ -3,42 +3,36 @@ package com.example.algorithm_top50.spring_array;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class MeetingRooms {
+public class S1_01_MeetingRooms {
 
     public static void main(String[] args) {
-        MeetingRooms meetingRooms = new MeetingRooms();
+        S1_01_MeetingRooms meetingRooms = new S1_01_MeetingRooms();
 
-        Interval interval1 = new Interval(15,20);
-        Interval interval2 = new Interval(5,10);
-        Interval interval3 = new Interval(0,30);
-        Interval[] intervals1 = {interval1, interval2, interval3};
+        Interval[] intervals1 = {getInterval(15, 20), getInterval(5, 10), getInterval(0, 30)};
         System.out.println("intervals1 : " + meetingRooms.solve(intervals1));
 
-        Interval interval4 = new Interval(7,10);
-        Interval interval5 = new Interval(2,4);
-        Interval[] intervals2 = {interval4, interval5};
+        Interval[] intervals2 = {getInterval(7, 10), getInterval(2, 4)};
         System.out.println("intervals2 : " + meetingRooms.solve(intervals2));
 
-        Interval interval6 = new Interval(2,4);
-        Interval[] intervals3 = {interval6};
+        Interval[] intervals3 = {getInterval(2, 4)};
         System.out.println("intervals3 : " + meetingRooms.solve(intervals3));
     }
 
-    public boolean solve(Interval[] intervals) {
-
-        System.out.println("Before : " + Arrays.toString(intervals));
-
+    private boolean solve(Interval[] intervals) {
         Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
-
-        System.out.println("After : " + Arrays.toString(intervals));
-
         if (intervals.length == 1) return true;
-
         for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
+            if (isScheduleOverLaps(intervals[i - 1].getEnd(), intervals[i].getStart())) return false;
         }
-
         return true;
+    }
+
+    private boolean isScheduleOverLaps(int frontMeetingEndTime, int meetingStartTime) {
+        return frontMeetingEndTime > meetingStartTime;
+    }
+
+    private static Interval getInterval(int s, int e) {
+        return new Interval(s, e);
     }
 
     private static class Interval {

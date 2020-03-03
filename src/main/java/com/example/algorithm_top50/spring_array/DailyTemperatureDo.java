@@ -2,7 +2,7 @@ package com.example.algorithm_top50.spring_array;
 
 import java.util.Stack;
 
-public class DailyTemperature {
+public class DailyTemperatureDo {
 
     public static void main(String[] args) {
         int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
@@ -14,16 +14,10 @@ public class DailyTemperature {
     }
 
     private static int[] dailyTemperatures(int[] temperatures) {
-        Stack<Integer> stack = new Stack<>();
-        int[] ret = new int[temperatures.length];
-        for(int i = 0; i < temperatures.length; i++) {
-            while(!stack.isEmpty() && temperatures[stack.peek()] < temperatures[i]) {
-                int index = stack.pop();
-                ret[index] = i - index;
-            }
-            stack.push(i);
-        }
-        return ret;
+
+
+
+        return new int[]{};
     }
 
 }
