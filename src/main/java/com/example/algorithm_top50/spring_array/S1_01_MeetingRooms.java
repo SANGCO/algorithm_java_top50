@@ -22,13 +22,9 @@ public class S1_01_MeetingRooms {
         Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
         if (intervals.length == 1) return true;
         for (int i = 1; i < intervals.length; i++) {
-            if (isScheduleOverLaps(intervals[i - 1].getEnd(), intervals[i].getStart())) return false;
+            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
         }
         return true;
-    }
-
-    private boolean isScheduleOverLaps(int frontMeetingEndTime, int meetingStartTime) {
-        return frontMeetingEndTime > meetingStartTime;
     }
 
     private static Interval getInterval(int s, int e) {
