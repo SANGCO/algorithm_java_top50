@@ -9,7 +9,7 @@ public class A03_TwoSum_do {
         int[] nums = {11, 21, 2, 8};
         int target = 10;
         int[] result = solve(nums, target);
-        Arrays.stream(result).forEach(System.out::print);
+        Arrays.stream(result).forEach(System.out::println);
     }
 
     public static int[] solve(int[] nums, int target) {
