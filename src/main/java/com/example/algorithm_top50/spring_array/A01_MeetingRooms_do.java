@@ -1,12 +1,9 @@
 package com.example.algorithm_top50.spring_array;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
-public class S1_01_MeetingRooms {
+public class A01_MeetingRooms_do {
 
     public static void main(String[] args) {
-        S1_01_MeetingRooms meetingRooms = new S1_01_MeetingRooms();
+        A01_MeetingRooms_do meetingRooms = new A01_MeetingRooms_do();
 
         Interval[] intervals1 = {getInterval(15, 20), getInterval(5, 10), getInterval(0, 30)};
         System.out.println("intervals1 : " + meetingRooms.solve(intervals1));
@@ -19,11 +16,7 @@ public class S1_01_MeetingRooms {
     }
 
     private boolean solve(Interval[] intervals) {
-        Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
-        if (intervals.length == 1) return true;
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
-        }
+
         return true;
     }
 
