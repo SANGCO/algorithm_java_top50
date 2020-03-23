@@ -19,7 +19,7 @@ public class 위장 {
         Map<String, Set<String>> map = new HashMap<>();
 
         for (String[] c : clothes) {
-            if (map.get(c[1]) == null) {
+            if (!map.containsKey(c[1])) {
                 Set<String> set = new HashSet<>();
                 set.add(c[0]);
                 map.put(c[1], set);
@@ -29,8 +29,8 @@ public class 위장 {
 
         int answer = 1;
 
-        for (Map.Entry<String, Set<String>> e : map.entrySet()) {
-            answer *= e.getValue().size() + 1;
+        for (Set<String> e : map.values()) {
+            answer *= e.size() + 1;
         }
         return answer - 1;
     }
