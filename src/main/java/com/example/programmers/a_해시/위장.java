@@ -1,4 +1,4 @@
-package com.example.programmers.해시;
+package com.example.programmers.a_해시;
 
 import java.util.*;
 

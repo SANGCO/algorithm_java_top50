@@ -9,7 +9,7 @@ public class A05_MergeInterval {
     }
 
     public static List<Interval> solution(List<Interval> intervals) {
-        Collections.sort(intervals, Comparator.comparing(Interval::getStart));
+        intervals.sort(Comparator.comparing(Interval::getStart));
 
         if (intervals.isEmpty()) {
             return intervals;

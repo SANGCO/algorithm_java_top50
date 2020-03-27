@@ -1,4 +1,4 @@
-package com.example.programmers.해시;
+package com.example.programmers.a_해시;
 
 public class 전화번호_목록 {
     public static boolean solution(String[] phoneBook) {

@@ -1,4 +1,4 @@
-package com.example.programmers.스택_큐;
+package com.example.programmers.b_스택_큐;
 
 import java.util.Arrays;
 import java.util.Stack;
@@ -24,4 +24,5 @@ public class 탑 {
         }
         return answer;
     }
+
 }
