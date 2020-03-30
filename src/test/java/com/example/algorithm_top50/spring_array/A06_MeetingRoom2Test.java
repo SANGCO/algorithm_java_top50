@@ -10,8 +10,17 @@ class A06_MeetingRoom2Test {
     void solve() {
         A06_MeetingRoom2 m = new A06_MeetingRoom2();
         int answer = m.solve(new int[][]{{0, 30}, {5, 10}, {15, 20}});
-        assertEquals(answer, 2);
+        assertEquals(2, answer);
         answer = m.solve(new int[][]{{7, 10}, {2, 4}});
-        assertEquals(answer, 1);
+        assertEquals(1, answer);
+    }
+
+    @Test
+    void solve_do() {
+        A06_MeetingRoom2_do m = new A06_MeetingRoom2_do();
+        int answer = m.solve(new int[][]{{0, 30}, {5, 10}, {15, 20}});
+        assertEquals(2, answer);
+        answer = m.solve(new int[][]{{7, 10}, {2, 4}});
+        assertEquals(1, answer);
     }
 }

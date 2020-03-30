@@ -19,7 +19,8 @@ public class A05_MergeInterval {
 
         for (int i = 1; i < intervals.size(); i++) {
             Interval current = intervals.get(i);
-            if (hold.getEnd() >= current.getStart()) hold.setEnd(Math.max(hold.getEnd(), current.getEnd()));
+            if (hold.getEnd() >= current.getStart())
+                hold.setEnd(Math.max(hold.getEnd(), current.getEnd()));
             else {
                 answer.add(hold);
                 hold = current;

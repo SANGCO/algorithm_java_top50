@@ -3,7 +3,7 @@ package com.example.algorithm_top50.spring_array;
 import java.util.*;
 
 
-public class A06_MeetingRoom2 {
+public class A06_MeetingRoom2_do {
 
     public int solve(int[][] intervalsArg) {
         List<Interval> intervals = new ArrayList<>();
@@ -12,15 +12,13 @@ public class A06_MeetingRoom2 {
             intervals.add(new Interval(e[0], e[1]));
         }
 
-        if(intervals.isEmpty())
-            return 0;
         intervals.sort(Comparator.comparing(Interval::getStart));
         Queue<Interval> queue = new PriorityQueue<>(intervals.size(), Comparator.comparing(Interval::getEnd));
         queue.offer(intervals.get(0));
 
         for (int i = 1; i < intervals.size(); i++) {
             Interval interval = queue.poll();
-            assert interval != null;
+
             if (interval.getEnd() <= intervals.get(i).getStart())
                 interval.setEnd(intervals.get(i).getEnd());
             else

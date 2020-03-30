@@ -1,6 +1,6 @@
 package com.example.algorithm_top50.spring_array;
 
-public class A10_PlusOne {
+public class A10_PlusOne_do {
 
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
