@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Truck_passing_a_bridgeTest {
+class Truck_passingBridgeTest {
 
     @Test
     public void test() {

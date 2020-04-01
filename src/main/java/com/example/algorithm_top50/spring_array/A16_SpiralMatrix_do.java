@@ -1,8 +1,9 @@
 package com.example.algorithm_top50.spring_array;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class A16_SpiralMatrix {
+public class A16_SpiralMatrix_do {
 
     public int[] solve(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
