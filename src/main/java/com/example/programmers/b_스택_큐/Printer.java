@@ -17,18 +17,6 @@ public class Printer {
             PrinterInner p = printerInners.poll();
             LinkedList<PrinterInner> ps = new LinkedList<>(printerInners);
 
-
-            if (isHighestPriority(ps, p)) {
-
-                if (p.isAnswer(location)) {
-                    p.order = order;
-                    answer = p;
-                    break;
-                }
-                order++;
-                continue;
-            }
-
             if (isThereAnyHigherPriority(ps, p)) {
                 printerInners.offer(p);
                 continue;
@@ -44,24 +32,11 @@ public class Printer {
         return answer.order;
     }
 
-    private boolean isHighestPriority(LinkedList<PrinterInner> printerInnersArg, PrinterInner p) {
-        if (printerInnersArg.isEmpty()) {
-            return true;
-        }
-        Collections.sort(printerInnersArg, Comparator.comparing(PrinterInner::getPrioritiy).reversed());
-        return p.isTopPriority(printerInnersArg.peek().prioritiy);
-    }
-
     private boolean isThereAnyHigherPriority(LinkedList<PrinterInner> printerInnersArg, PrinterInner p) {
-        if (printerInnersArg.isEmpty()) {
-            return false;
-        }
-        Collections.sort(printerInnersArg, Comparator.comparing(PrinterInner::getPrioritiy).reversed());
-
-        for (PrinterInner p1 : printerInnersArg) {
-            if (p1.isTopPriority(p.prioritiy)) {
-                return true;
-            }
+        if (!printerInnersArg.isEmpty() &&
+            p.prioritiy < printerInnersArg.stream().mapToInt(PrinterInner::getPrioritiy).max().orElse(0))
+        {
+            return true;
         }
         return false;
     }
