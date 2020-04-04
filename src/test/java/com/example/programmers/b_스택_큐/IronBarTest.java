@@ -9,7 +9,7 @@ class IronBarTest {
     @Test
     void solution() {
         IronBar i = new IronBar();
-        int answer = i.solution1("()(((()())(())()))(())");
+        int answer = i.solution3("()(((()())(())()))(())");
         assertEquals(17, answer);
     }
 }

@@ -4,12 +4,50 @@ import java.util.*;
 
 public class IronBar {
 
-    public int solution1(String arrangement) {
-        LinkedList<Integer> bars = new LinkedList<>();
+    public int solution3(String arrangement) {
         int answer = 0;
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < arrangement.length(); i++) {
+            if (arrangement.charAt(i) == '(') {
+                st.push(i);
+            } else if (arrangement.charAt(i) == ')') {
+                if (st.peek() + 1 == i) {
+                    st.pop();
+                    answer += st.size();
+                } else {
+                    st.pop();
+                    answer += 1;
+                }
+            }
+        }
+        return answer;
+    }
 
+    public int solution1(String arrangement) {
+        Stack<Character> bars = new Stack<>();
+        int answer = 0;
+        boolean isBar = false;
 
+        // TODO ')'에서 answer를 늘려가는 부분 체크!
+        for (char bar : arrangement.toCharArray()) {
+            if (bar == '(') {
+                bars.push(bar);
+                isBar = false;
+            }
 
+            if (bar == ')') {
+                bars.pop();
+
+                if (isBar) {
+                    answer++;
+                }
+
+                if (!isBar) {
+                    answer += bars.size();
+                    isBar = true;
+                }
+            }
+        }
         return answer;
     }
 
