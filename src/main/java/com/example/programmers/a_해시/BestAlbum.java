@@ -24,11 +24,12 @@ public class BestAlbum {
         List<Integer> answer = new ArrayList<>();
 
         for (Genre genre : list) {
-            int[] position = genre.albums.stream().mapToInt(Album::getInitialPosition).toArray();
-            answer.add(position[0]);
-            if (position.length > 1) {
-                answer.add(position[1]);
-            }
+            answer.addAll(genre.albums.stream()
+                    .limit(2)
+                    .mapToInt(Album::getInitialPosition)
+                    .boxed()
+                    .collect(Collectors.toList())
+            );
         }
         return answer.stream().mapToInt(Integer::intValue).toArray();
     }
