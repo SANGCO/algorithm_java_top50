@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 public class BestAlbum {
 
-    // TODO 같은 재생 횟수가 들어왔을 때가 빠졌다.
     public int[] solution(String[] genres, int[] plays) {
         Map<String, Genre> map = new HashMap<>();
 
@@ -51,7 +50,6 @@ public class BestAlbum {
         }
 
         public Genre sortAlbums() {
-            // TODO 스트림 돌리고 담아줘야 적용이된다.
             albums = albums.stream()
                     .sorted(Comparator.comparing(Album::getPlayCount, Comparator.reverseOrder())
                         .thenComparing(Album::getInitialPosition))

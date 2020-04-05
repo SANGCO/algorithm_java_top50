@@ -12,7 +12,6 @@ public class 완주하지_못한_선수 {
                 return participant[i];
             }
         }
-
         return participant[completion.length];
     }
 
