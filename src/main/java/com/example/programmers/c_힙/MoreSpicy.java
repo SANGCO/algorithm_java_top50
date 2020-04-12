@@ -1,4 +1,4 @@
-package com.example.programmers.b_힙;
+package com.example.programmers.c_힙;
 
 import java.util.*;
 import java.util.stream.Collectors;
