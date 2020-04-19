@@ -6,10 +6,9 @@ import java.util.stream.Collectors;
 public class StockPrice {
 
     public int[] solution1(int[] prices) {
-        List<Stock> list = new ArrayList<>();
-        list.addAll(Arrays.stream(prices)
-                .mapToObj(Stock::new)
-                .collect(Collectors.toList()));
+        List<Stock> list = Arrays.stream(prices)
+                                 .mapToObj(Stock::new)
+                                 .collect(Collectors.toList());
 
         for (int i = 0; i < list.size(); i++) {
 
