@@ -1,5 +1,7 @@
 package com.example.programmers.e_완전탐색;
 
+import java.util.List;
+
 public class FindPrimeNumbers {
 
     public int solution(String numbers) {
@@ -13,6 +15,20 @@ public class FindPrimeNumbers {
 
         int answer = 0;
         return answer;
+    }
+
+    private boolean prime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static boolean isPrime(List<Integer> primes, Integer candidate) {
+        double candidateRoot = Math.sqrt((double) candidate);
+        return primes.stream().filter(p -> p < candidateRoot).noneMatch(p -> candidate % p == 0);
+//        return takeWhile(primes, i -> i <= candidateRoot).stream().noneMatch(i -> candidate % i == 0);
     }
 
 }

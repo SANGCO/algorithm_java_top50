@@ -16,9 +16,7 @@ public class NumbersBaseball {
 
             for (char c : String.valueOf(ball[0]).toCharArray()) {
 
-                if (c != '0') {
-                    set.add(String.valueOf(c));
-                }
+                set.add(String.valueOf(c));
             }
         }
 
@@ -62,7 +60,7 @@ public class NumbersBaseball {
 
         for (int i = 0; i < numbArray.length; i++) {
 
-            if (temp[i] != '0' && temp[i] == numbArray[i]) {
+            if (temp[i] == numbArray[i]) {
                 strike++;
             }
         }
@@ -71,7 +69,7 @@ public class NumbersBaseball {
 
             for (char b : temp) {
 
-                if (b != '0' && a == b) {
+                if (a == b) {
                     ball++;
                 }
             }
