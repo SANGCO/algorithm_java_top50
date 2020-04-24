@@ -39,6 +39,7 @@ public class 위장 {
         return Arrays.stream(clothes)
                      .collect(
                         groupingBy(p -> p[1], mapping(p -> p[0], counting())))
+                // p[1] 그룹핑하고 그냥 counting() 하면 p[1]을 카운팅 하는거니깐 다시 매핑을 해서 p[0]을 카운팅
                      .values()
                      .stream()
                      .reduce(1L, (x, y) -> x * (y + 1))

@@ -1,13 +1,19 @@
 package com.example.programmers.e_완전탐색;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class NumbersBaseball {
 
     public int solution(int[][] baseball) {
+
+        List<String> list1 = Arrays.stream(baseball)
+                                  .map(i -> String.valueOf(i[0]).split(""))
+                                  .flatMap(Arrays::stream)
+                                  .distinct()
+                                  .collect(Collectors.toList());
+
+
         Set<String> set = new HashSet<>();
         List<String> list = new ArrayList<>();
         List<String> answer = new ArrayList<>();

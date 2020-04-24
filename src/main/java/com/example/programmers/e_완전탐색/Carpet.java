@@ -5,11 +5,11 @@ public class Carpet {
     public int[] solution(int brown, int red) {
         int[] answer = new int[2];
 
-        for (int horizontal = (brown / 2) - 1; horizontal > 0; horizontal--) {
-            int vertical = ((brown - (2 * horizontal)) / 2) + 2;
-            if (red == ((horizontal - 2)  * (vertical - 2))) {
-                answer[0] = horizontal;
-                answer[1] = vertical;
+        for (int width = (brown / 2) - 1; width > 0; width--) {
+            int length = ((brown - (2 * width)) / 2) + 2;
+            if (red == ((width - 2)  * (length - 2))) {
+                answer[0] = width;
+                answer[1] = length;
                 break;
             }
         }
