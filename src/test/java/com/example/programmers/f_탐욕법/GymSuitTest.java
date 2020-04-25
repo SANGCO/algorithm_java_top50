@@ -9,7 +9,7 @@ class GymSuitTest {
     @Test
     void solution1() {
         GymSuit g = new GymSuit();
-        int answer = g.solution(5, new int[]{2, 4}, new int[]{1, 3, 4});
+        int answer = g.solution(5, new int[]{2, 4}, new int[]{1, 3, 5});
         assertEquals(5, answer);
     }
 

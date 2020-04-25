@@ -1,49 +1,43 @@
 package com.example.programmers.f_탐욕법;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GymSuit {
 
     public int solution(int n, int[] lost, int[] reserve) {
-        List<Student> lostStudents =
-                Arrays.stream(lost)
-                        .mapToObj(l -> {
-                            Student s = new Student(l);
-                            s.isDone = false;
-                            s.isLost = true;
-                            return s;
-                        })
-                        .sorted(Comparator.comparing(Student::getId))
-                        .collect(Collectors.toList());
+        Map<Integer, Student> map =
+                IntStream.rangeClosed(1, n)
+                        .mapToObj(Student::new)
+                        .collect(Collectors.toMap(Student::getId, s -> s));
 
-        List<Student> reserveStudents =
-                Arrays.stream(reserve)
-                        .mapToObj(r -> {
-                            Student s = new Student(r);
-                            s.isDone = false;
-                            s.anyReserve = true;
-                            return s;
-                        })
-                        .sorted(Comparator.comparing(Student::getId))
-                        .collect(Collectors.toList());
+        Queue<Student> lostStudents = new PriorityQueue<>();
+        Queue<Student> reserveStudents = new PriorityQueue<>();
 
-        for (Student l : lostStudents) {
+        Arrays.stream(lost).forEach(l -> {
+            Student student = map.get(l);
 
-            for (Student r : reserveStudents) {
-                if (l.isDone || r.isDone) {
-                    continue;
-                }
-
-                if (l.id == r.id) {
-                    l.isDone = true;
-                    r.isDone = true;
-                    break;
-                }
+            if (student != null) {
+                student.isDone = false;
+                student.isLost = true;
+                lostStudents.add(student);
             }
-        }
+        });
+
+        Arrays.stream(reserve).forEach(r -> {
+            Student student = map.get(r);
+
+            if (student != null && !student.isDone) {
+                student.isDone = true;
+                student.anyReserve = true;
+                lostStudents.remove(student);
+            } else {
+                student.isDone = false;
+                student.anyReserve = true;
+                reserveStudents.add(student);
+            }
+        });
 
         for (Student l : lostStudents) {
 
@@ -60,16 +54,30 @@ public class GymSuit {
             }
         }
 
-        List<Student> answer =
-                lostStudents.stream()
-                        .filter(student -> !student.isDone)
-                        .filter(student -> student.isLost)
-                        .collect(Collectors.toList());
+        return (int) (n - lostStudents.stream().filter(s -> !s.isDone).count());
 
-        return n - answer.size();
+//                map.values().stream()
+//                        .filter(s -> !s.isDone)
+//                        .filter(Student::isLost)
+//                        .filter(so -> {
+//                            return map.values().stream()
+//                                    .filter(s -> !s.isDone)
+//                                    .filter(Student::isAnyReserve)
+//                                    .noneMatch(si -> {
+//
+//                                        if (!so.isDone && so.id + 1 == si.id || so.id - 1 == si.id) {
+//                                            so.isDone = true;
+//                                            si.isDone = true;
+//
+//                                            return true;
+//                                        }
+//                                        return false;
+//                                    });
+//                        })
+//                        .count();
     }
 
-    private class Student {
+    private class Student implements Comparable<Student> {
 
         int id;
 
@@ -85,6 +93,23 @@ public class GymSuit {
 
         public int getId() {
             return id;
+        }
+
+        public boolean isLost() {
+            return isLost;
+        }
+
+        public boolean isAnyReserve() {
+            return anyReserve;
+        }
+
+        public boolean isDone() {
+            return isDone;
+        }
+
+        @Override
+        public int compareTo(Student student) {
+            return this.id - student.id;
         }
     }
 }
