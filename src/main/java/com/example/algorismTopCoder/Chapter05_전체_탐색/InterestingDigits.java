@@ -4,26 +4,7 @@ import java.util.ArrayList;
 
 public class InterestingDigits {
 
-    public static void main(String[] args) {
-
-        int base1 = 10; //expect {3, 9}
-        int base2 = 30; //expect {29}
-
-        printArray(digits1(base1));
-        printArray(digits1(base2));
-        printArray(digits2(base1));
-        printArray(digits2(base2));
-
-    }
-
-    private static void printArray(int[] digits) {
-        for (int i : digits) {
-            System.out.print(i + ",");
-        }
-        System.out.println();
-    }
-
-    private static int[] digits1(int base) {
+    public int[] digits1(int base) {
         ArrayList<Integer> v = new ArrayList();
 
         for(int n = 2; n < base; n++) {
@@ -52,7 +33,7 @@ public class InterestingDigits {
         return ans;
     }
 
-    private static int[] digits2(int base) {
+    public int[] digits2(int base) {
         ArrayList<Integer> v = new ArrayList();
 
         for(int n = 2; n < base; n++) {

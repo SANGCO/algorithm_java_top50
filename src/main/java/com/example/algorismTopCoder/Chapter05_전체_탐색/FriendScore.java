@@ -16,6 +16,8 @@ public class FriendScore {
                 if(friends[i].charAt(j) == 'Y') {
                     cnt++;
                 } else {
+                    // 친구의 친구 찾기
+                    // j하고 k하고 친구이고 k하고 i가 친구면 j하고 i는 친구
                     for(int k = 0; k < n; k++) {
                         if(friends[j].charAt(k) == 'Y' && friends[k].charAt(i) == 'Y') {
                             cnt++;

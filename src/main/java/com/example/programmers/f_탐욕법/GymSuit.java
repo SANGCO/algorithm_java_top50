@@ -77,7 +77,7 @@ public class GymSuit {
 //                        .count();
     }
 
-    private class Student implements Comparable<Student> {
+    private class Student {
 
         int id;
 
@@ -107,9 +107,5 @@ public class GymSuit {
             return isDone;
         }
 
-        @Override
-        public int compareTo(Student student) {
-            return this.id - student.id;
-        }
     }
 }

@@ -14,6 +14,7 @@ public class Cryptography {
 
     }
 
+    // 수학적 지식을 이용해
     private static long encrypt_version1(int[] numbers) {
         long ret = 1;
         Arrays.sort(numbers);
@@ -26,6 +27,7 @@ public class Cryptography {
         return ret;
     }
 
+    // 전체 탐색으로
     private static long encrypt_version2(int[] numbers) {
       long ans = 0;
 
