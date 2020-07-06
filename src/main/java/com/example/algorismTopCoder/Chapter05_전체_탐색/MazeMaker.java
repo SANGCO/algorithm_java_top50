@@ -33,10 +33,10 @@ public class MazeMaker {
                 int nextRow = nowRow + moveRow[i];
                 int nextCol = nowCol + moveCol[i];
 
-                if (nextRow >= 0 && nextRow < mazeRow
-                        && nextCol >= 0 && nextCol < mazeCol
-                        && maze[nextRow].charAt(nextCol) == '.'
-                        && dp[nextRow][nextCol] == -1) {
+                if (nextRow >= 0 && nextRow < mazeRow &&
+                    nextCol >= 0 && nextCol < mazeCol &&
+                    maze[nextRow].charAt(nextCol) == '.' &&
+                    dp[nextRow][nextCol] == -1) {
 
                     dp[nextRow][nextCol] = dp[nowRow][nowCol] + 1;
                     queRow.add(nextRow);
