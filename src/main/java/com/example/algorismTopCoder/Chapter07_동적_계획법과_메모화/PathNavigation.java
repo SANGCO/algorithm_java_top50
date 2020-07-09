@@ -4,7 +4,7 @@ public class PathNavigation {
 
     private static class code7_2 {
         int h = 5, w = 4;
-        int[][] dp =new int[h + 1][w + 1];
+        int[][] dp = new int[h + 1][w + 1];
 
         int dfs(int nowh, int noww) {
             if (nowh > h || noww > w) return 0;
@@ -16,7 +16,7 @@ public class PathNavigation {
 
     private static class code7_3 {
         int h = 5, w = 4;
-        int[][] dp =new int[h + 1][w + 1];
+        int[][] dp = new int[h + 1][w + 1];
 
         void cals() {
             int i, j;
