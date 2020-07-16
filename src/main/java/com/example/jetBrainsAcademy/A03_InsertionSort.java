@@ -1,6 +1,6 @@
 package com.example.jetBrainsAcademy;
 
-public class A03_insertionSort {
+public class A03_InsertionSort {
 
     public static void main(String[] args) {
         insertionSort(new int[] { 21, 23, 19, 30, 11, 28 }); // { 11, 19, 21, 23, 28, 30 }

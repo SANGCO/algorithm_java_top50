@@ -1,6 +1,6 @@
 package com.example.jetBrainsAcademy;
 
-public class A01_selectionSort {
+public class A01_SelectionSort {
 
     public static void main(String[] args) {
         selectionSort(new int[] { 21, 23, 19, 30, 11, 28 }); // { 11, 19, 21, 23, 28, 30 }
