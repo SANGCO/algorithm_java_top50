@@ -24,6 +24,9 @@ public class A04_QuickSort {
 
         /* move large values into the right side of the array */
         for (int i = left; i < right; i++) {
+            // 전체 돌면서 14보다 작은걸 찾으면 partitionIndex의 값과 swap
+            // { 17, 25, 11, 16, 10, 13, 22, 14 }
+            // { 11, 25, 17, 16, 10, 13, 22, 14 }
             if (array[i] <= pivot) { // may be used '<' as well
                 swap(array, i, partitionIndex);
                 partitionIndex++;

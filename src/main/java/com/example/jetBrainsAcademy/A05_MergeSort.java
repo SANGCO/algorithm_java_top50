@@ -48,12 +48,12 @@ public class A05_MergeSort {
         }
 
         /* insert all the remaining elements of the left subarray in the array */
-        for (;i < middle; i++, k++) {
+        for (; i < middle; i++, k++) {
             temp[k] = array[i];
         }
 
         /* insert all the remaining elements of the right subarray in the array */
-        for (;j < right; j++, k++) {
+        for (; j < right; j++, k++) {
             temp[k] = array[j];
         }
 
