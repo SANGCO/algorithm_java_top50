@@ -2,6 +2,9 @@ package com.example.algorithm.dp.baekjoon;
 
 import java.util.Scanner;
 
+// 정수 삼각형
+// https://www.acmicpc.net/problem/1932
+
 public class A1932 {
 
     public static void main(String[] args) {
