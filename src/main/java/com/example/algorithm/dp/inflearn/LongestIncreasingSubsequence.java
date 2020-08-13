@@ -6,14 +6,14 @@ public class LongestIncreasingSubsequence {
 
     public static void main(String[] args) {
 
-        LongestIncreasingSubsequence a = new LongestIncreasingSubsequence();
+        LongestIncreasingSubsequence2 a = new LongestIncreasingSubsequence2();
         int[] nums = {1, 2, 3, 2, 5, 2, 6, 10, 4, 12};
 //		int[] nums = {9, 11, 2, 8, 4, 7, 88, 15};
 
-        System.out.println("value "+ a.solve(nums));
+        System.out.println("value "+ solve(nums));
     }
 
-    public int solve(int[] nums) {
+    private static int solve(int[] nums) {
         int[] dp = new int[nums.length];
 
         for (int i = 0; i < nums.length; i++) {

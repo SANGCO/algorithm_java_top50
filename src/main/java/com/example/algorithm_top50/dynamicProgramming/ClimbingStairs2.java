@@ -1,6 +1,6 @@
 package com.example.algorithm_top50.dynamicProgramming;
 
-public class ClimbingStairs {
+public class ClimbingStairs2 {
 
     public static void main(String[] args) {
         int n = 4;

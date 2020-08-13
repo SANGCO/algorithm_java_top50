@@ -2,7 +2,7 @@ package com.example.algorithm_top50.dynamicProgramming;
 
 import java.util.Arrays;
 
-public class CoinChange {
+public class CoinChange2 {
 
     public static void main(String[] args) {
         int[] coins = {1, 2, 5};

@@ -1,6 +1,6 @@
 package com.example.algorithm_top50.dynamicProgramming;
 
-public class UniquePaths {
+public class UniquePaths2 {
 
     public static void main(String[] args) {
         int m = 7, n = 3;
