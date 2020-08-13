@@ -16,13 +16,4 @@ class A11_UniqueEamilAddressTest {
         assertEquals(2, answer);
     }
 
-    @Test
-    void numUniqueEmails_do() {
-        A11_UniqueEamilAddress_do u = new A11_UniqueEamilAddress_do();
-        int answer = u.numUniqueEmails(new String[]{
-                "test.email+alex@leetcode.com",
-                "test.e.mail+bob.cathy@leetcode.com",
-                "testemail+david@lee.tcode.com"});
-        assertEquals(2, answer);
-    }
 }

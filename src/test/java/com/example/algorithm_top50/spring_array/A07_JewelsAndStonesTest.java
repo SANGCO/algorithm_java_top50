@@ -13,11 +13,4 @@ class A07_JewelsAndStonesTest {
         assertEquals(answer, 3);
     }
 
-    @Test
-    void solve_do() {
-        A07_JewelsAndStones_do j = new A07_JewelsAndStones_do();
-        int answer = j.solve("aA", "aAAbbbb");
-        assertEquals(answer, 3);
-    }
-
 }

@@ -19,11 +19,4 @@ class A15_FindAllAnagramsTest_do {
         assertIterableEquals(expected, answer);
     }
 
-    @Test
-    void findAnagrams_do() {
-        A15_FindAllAnagrams_do f = new A15_FindAllAnagrams_do();
-        List<Integer> expected = Arrays.asList(0, 5, 6);
-        List<Integer> answer = f.findAnagrams("BACDGABCDA", "ABCD");
-        assertIterableEquals(expected, answer);
-    }
 }

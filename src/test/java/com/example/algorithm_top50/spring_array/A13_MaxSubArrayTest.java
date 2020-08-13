@@ -13,10 +13,4 @@ class A13_MaxSubArrayTest {
         assertEquals(6, answer);
     }
 
-    @Test
-    void maxSubArray_do() {
-        A13_MaxSubArray_do m = new A13_MaxSubArray_do();
-        int answer = m.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
-        assertEquals(6, answer);
-    }
 }

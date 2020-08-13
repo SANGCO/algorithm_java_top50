@@ -12,9 +12,4 @@ class A16_SpiralMatrixTest {
         s.solve(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
     }
 
-    @Test
-    void solve_do() {
-        A16_SpiralMatrix_do s = new A16_SpiralMatrix_do();
-        s.solve(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-    }
 }

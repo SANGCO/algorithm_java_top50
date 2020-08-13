@@ -16,13 +16,4 @@ class A10_PlusOneTest {
         assertArrayEquals(new int[]{1, 0, 0, 0}, answer);
     }
 
-    @Test
-    void plusOne_do() {
-        A10_PlusOne_do p = new A10_PlusOne_do();
-        int[] answer = p.plusOne(new int[]{1, 2, 3});
-        assertArrayEquals(new int[]{1, 2, 4}, answer);
-
-        answer = p.plusOne(new int[]{9, 9, 9});
-        assertArrayEquals(new int[]{1, 0, 0, 0}, answer);
-    }
 }

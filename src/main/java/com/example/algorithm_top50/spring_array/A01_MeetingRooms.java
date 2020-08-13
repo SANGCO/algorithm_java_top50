@@ -5,6 +5,20 @@ import java.util.Comparator;
 
 public class A01_MeetingRooms {
 
+    private boolean solve(Interval[] intervals) {
+       // 소팅
+        Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
+        if (intervals.length == 1) return true;
+
+        // 앞시간 end > 뒤시간 start 이거는 false
+        // 앞시간 끝나고 뒤에거 시작해야지
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         A01_MeetingRooms meetingRooms = new A01_MeetingRooms();
 
@@ -16,15 +30,6 @@ public class A01_MeetingRooms {
 
         Interval[] intervals3 = {getInterval(2, 4)};
         System.out.println("intervals3 : " + meetingRooms.solve(intervals3));
-    }
-
-    private boolean solve(Interval[] intervals) {
-        Arrays.sort(intervals, Comparator.comparing(Interval::getStart));
-        if (intervals.length == 1) return true;
-        for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i - 1].getEnd() > intervals[i].getStart()) return false;
-        }
-        return true;
     }
 
     private static Interval getInterval(int s, int e) {

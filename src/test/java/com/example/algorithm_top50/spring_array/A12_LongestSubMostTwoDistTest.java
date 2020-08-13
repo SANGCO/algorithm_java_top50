@@ -13,10 +13,4 @@ class A12_LongestSubMostTwoDistTest {
         assertEquals(5, answer);
     }
 
-    @Test
-    void lengthOfLongestSubstringTwoDistinct_do() {
-        A12_LongestSubMostTwoDist_do l = new A12_LongestSubMostTwoDist_do();
-        int answer = l.lengthOfLongestSubstringTwoDistinct("ccaabbb");
-        assertEquals(5, answer);
-    }
 }

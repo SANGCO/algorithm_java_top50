@@ -1,4 +1,4 @@
-package com.example.algorithm_top50.dynamicProgramming;
+package com.example.algorithm.dp.inflearn;
 
 import java.util.Arrays;
 

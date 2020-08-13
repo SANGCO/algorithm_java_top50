@@ -1,4 +1,4 @@
-package com.example.algorithm_top50.dynamicProgramming;
+package com.example.algorithm.dp.inflearn;
 
 // https://github.com/codingstudy-pushup/javacoding_top50/blob/master/Dynamic/%EC%BD%94%EB%94%A9%EB%8F%99%EC%98%81%EC%83%8150%EB%AC%B8%EC%A0%9C%20Dynamic.pdf
 
