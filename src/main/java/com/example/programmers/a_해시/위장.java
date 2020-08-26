@@ -38,11 +38,10 @@ public class 위장 {
     private static int solution2(String[][] clothes) {
         return Arrays.stream(clothes)
                      .collect(
+//                      의상 종류 별로 몇가지 의상이 있는지를 한방에
                         groupingBy(p -> p[1], mapping(p -> p[0], counting())))
-                // p[1] 그룹핑하고 그냥 counting() 하면 p[1]을 카운팅 하는거니깐 다시 매핑을 해서 p[0]을 카운팅
                      .values()
                      .stream()
-                     .reduce(1L, (x, y) -> x * (y + 1))
-                     .intValue() - 1;
+                     .reduce(1L, (x, y) -> x * (y + 1)).intValue() - 1;
     }
 }

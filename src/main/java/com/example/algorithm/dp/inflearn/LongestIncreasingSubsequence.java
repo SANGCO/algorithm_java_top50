@@ -6,7 +6,7 @@ public class LongestIncreasingSubsequence {
 
     public static void main(String[] args) {
 
-        LongestIncreasingSubsequence2 a = new LongestIncreasingSubsequence2();
+        LongestIncreasingSubsequence a = new LongestIncreasingSubsequence();
         int[] nums = {1, 2, 3, 2, 5, 2, 6, 10, 4, 12};
 //		int[] nums = {9, 11, 2, 8, 4, 7, 88, 15};
 

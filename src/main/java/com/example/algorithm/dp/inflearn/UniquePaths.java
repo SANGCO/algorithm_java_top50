@@ -10,16 +10,28 @@ public class UniquePaths {
     }
 
     private static int uniquePaths(int m, int n) {
+        /**
+         * 왼쪽과 위를 더하면 된다.
+         */
         Integer[][] map = new Integer[m][n];
 
+        /**
+         * 첫번째 열 1로 쫙 깐다.
+         */
         for (int i = 0; i < m; i++) {
             map[i][0] = 1;
         }
 
+        /**
+         * 첫번째 행 1로 쫙 깐다.
+         */
         for (int i = 0; i < n; i++) {
             map[0][i] = 1;
         }
 
+        /**
+         * 첫번째 행과 열을 1로 깔았으니 for문 시작은 (1, 1) 부터
+         */
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 // 1 1 1

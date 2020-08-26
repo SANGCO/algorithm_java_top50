@@ -3,6 +3,8 @@ package com.example.algorithm.temp.programmers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCompressionTest {
