@@ -1,8 +1,8 @@
-package com.example.algorithm.dp.inflearn;
+package com.example.algorithm_top50.dynamicProgramming;
 
 // https://github.com/codingstudy-pushup/javacoding_top50/blob/master/Dynamic/%EC%BD%94%EB%94%A9%EB%8F%99%EC%98%81%EC%83%8150%EB%AC%B8%EC%A0%9C%20Dynamic.pdf
 
-public class ClimbingStairs {
+public class A02_ClimbingStairs {
 
     public static void main(String[] args) {
         int n = 4;
@@ -10,6 +10,24 @@ public class ClimbingStairs {
     }
 
     private static int climbStairs(int n) {
+
+
+        return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static int climbStairs1(int n) {
         int[] dp = new int[n + 1];
         if (n == 1) return 1;
         if (n == 2) return 2;

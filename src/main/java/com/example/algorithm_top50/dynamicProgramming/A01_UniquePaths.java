@@ -1,15 +1,46 @@
-package com.example.algorithm.dp.inflearn;
+package com.example.algorithm_top50.dynamicProgramming;
 
 // https://github.com/codingstudy-pushup/javacoding_top50/blob/master/Dynamic/%EC%BD%94%EB%94%A9%EB%8F%99%EC%98%81%EC%83%8150%EB%AC%B8%EC%A0%9C%20Dynamic.pdf
 
-public class UniquePaths {
+public class A01_UniquePaths {
 
     public static void main(String[] args) {
-        int m = 7, n = 3;
-        System.out.println(uniquePaths(m, n));
+        int m = 7;
+        int n = 3;
+        System.out.println(uniquePaths(m, n)); // 28
+
+        m = 3;
+        n = 2;
+        System.out.println(uniquePaths(m, n)); // 3
     }
 
     private static int uniquePaths(int m, int n) {
+
+
+
+
+        return 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private static int uniquePaths1(int m, int n) {
         /**
          * 왼쪽과 위를 더하면 된다.
          */
@@ -41,8 +72,7 @@ public class UniquePaths {
                 map[i][j] = map[i][j - 1] + map[i - 1][j];
             }
         }
-
-        return 0;
+        return map[m - 1][n - 1];
     }
 
 }
