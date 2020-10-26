@@ -15,6 +15,7 @@ public class A01_NumberOfIsland_DFS {
         System.out.println(answer);
     }
 
+    // TODO grid, m, n 이런거 모아서 static 객체로 만들어서 쓰면 될거 같은데
     int m, n;
 
     int numsIslands(char[][] grid) {
