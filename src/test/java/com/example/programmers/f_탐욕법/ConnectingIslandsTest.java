@@ -2,7 +2,7 @@ package com.example.programmers.f_탐욕법;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ConnectingIslandsTest {
 
