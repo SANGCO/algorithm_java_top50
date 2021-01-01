@@ -2,46 +2,31 @@ package com.example.programmers.f_탐욕법;
 
 public class Joystick {
 
-    public int solution1(String name) {
-        String normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String reverse = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
-
-        int answer = 0;
-
-        for (char c : name.toCharArray()) {
-            int n = normal.indexOf(c);
-            int r = reverse.indexOf(c) + 1;
-
-            answer += Math.min(n, r);
-            answer++;
-        }
-        return answer - 1;
-    }
-
     public int solution(String name) {
         int answer = 0;
-        int[] diff = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
 
         for (char c : name.toCharArray()) {
-            answer += diff[c - 'A'];
+            int f = c - 'A';
+            int r = 'Z' - c + 1;
+            answer += Math.min(f, r);
         }
         int length = name.length();
-        int min = length - 1;
-
+        int minMove = length - 1;
         for (int i = 0; i < length; i++) {
-            int next = i + 1;
-            while (next < length && name.charAt(next) == 'A') {
-                next++;
-            }
-            min = Math.min(min, i + (length - next) + Math.min(i, length - next));
-//            -----  min
-//            -      i
-//              ---  length - next
-//            -      Math.min(i, length - next)
-//            뒤로 먼저 갔다가 앞으로 오던 앞으로 갔다가 다시 뒤로 가던 해야니깐 이게 필요하다.
+          if (name.charAt(i) == 'A') {
+              int next = i + 1;
+              while (next < length && name.charAt(next) == 'A') {
+                  next++;
+              }
 
+              // (2 * i)는 갔다가 빽하기 위해서 다시 돌아가는거
+              // (length - next)는 연속된 A가 끝나고 남은 거리
+              int move = 2 * (i - 1) + length - next;
+              minMove = Math.min(minMove, move);
+          }
         }
-
-        return answer + min;
+        answer += minMove;
+        return answer;
     }
+
 }
