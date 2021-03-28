@@ -4,6 +4,9 @@ import java.util.*;
 
 public class ConnectingIslands {
 
+    // 크루스칼 알고리즘
+    // 최소 신장 트리
+
     public int solution(int n, int[][] costs) {
         List<Edge> list = new ArrayList<>();
         Queue<Edge> queue = new PriorityQueue<>(
