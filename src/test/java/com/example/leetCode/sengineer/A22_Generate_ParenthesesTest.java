@@ -8,7 +8,7 @@ class A22_Generate_ParenthesesTest {
     @Test
     public void test1() {
         A22_Generate_Parentheses a = new A22_Generate_Parentheses();
-        Object[] result = a.generateParenthesis(3).toArray();
+        Object[] result = a.generateParenthesis(9).toArray();
         Assertions.assertArrayEquals(result, new String[]{"((()))", "(()())", "(())()", "()(())", "()()()"});
     }
 
